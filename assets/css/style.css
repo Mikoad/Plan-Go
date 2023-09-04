@@ -1,140 +1,146 @@
 /*basics*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 h1 {
-    font-size: 3rem;
-    padding: 20px;
-
+  font-size: 3rem;
+  padding: 20px;
 }
 
 h2,
 h3 {
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
 }
 
 h2 {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+nav a,
+footer a {
+  text-decoration: none;
+  color: white;
 }
-
-
-
 
 /*buttons*/
 .btn {
-    padding: 13px;
-    width: 145px;
-    margin: 30px 10px;
-    color: black;
-    font-weight: bold;
-    font-size: 1rem;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 25px;
-    /* box-shadow: 2px 2px rgba(0, 0, 0, 0.555) ; */
-    transition: transform 200ms;
-
+  padding: 13px;
+  width: 145px;
+  margin: 30px 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 25px;
+  /* box-shadow: 2px 2px rgba(0, 0, 0, 0.555) ; */
+  transition: transform 200ms;
 }
 
 .btn:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .login {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 7px;
 }
 
 .squaredBtn {
-    color: black;
-    background-color: white;
-    padding: 5px;
-    margin: 30px 7px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.7rem;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  margin: 30px 7px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.7rem;
 }
-
-
 
 /*navbar*/
 
 nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 80px;
-    background-color: #3494c4;
-    /* background-color: #3DA5D9 #2274A5 #25544f; */
-    list-style: none;
-    font-size: 0.9rem;
-    color: white;
-    font-weight: bold;
-    padding-right: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.867);
+  /* background-color: #3DA5D9 #2274A5 #25544f; */
+  list-style: none;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  padding-right: 25px;
+  position: relative;
 }
 
+nav button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  display: inline;
+  top: 25px;
+  right: 4vw;
+  border: 2px solid white;
+  border-radius: 9999px;
+}
+nav button i {
+  color: white;
+}
 ul span {
-    font-family: 'Alfa Slab One', cursive;
-    color: white;
-    font-weight: lighter;
-    font-size: 2rem;
+  font-family: "Alfa Slab One", cursive;
+  color: white;
+  font-weight: lighter;
+  font-size: 2rem;
 }
 
 /*underline animation*/
 nav ul li {
-    transition: transform 200ms;
-
+  transition: transform 200ms;
 }
 
 nav ul li:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 nav img {
-    height: 70px;
-    border-radius: 35px;
-    position: relative;
+  height: 70px;
+  border-radius: 35px;
+  position: relative;
 }
-
-
 
 /*header-content*/
 header {
-    color: white;
+  color: white;
 }
 .headerContainer {
-    position: relative;
+  position: relative;
 }
 .headerContent {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin: 0;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    font-size: 1.2rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin: 0;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: white;
 }
 span {
-    font-weight: bold;
+  font-weight: bold;
 }
 .imgHeader {
-    height: 92vh;
-    width: 100%;
-    filter: brightness(60%);
+  height: 92vh;
+  width: 100%;
+  filter: brightness(60%);
 }
 
 /*homepage*/
@@ -142,222 +148,234 @@ span {
 /*carousel presentation*/
 .title,
 .paragraph {
-    transition: transform 0.5s;
+  transition: transform 0.5s;
 }
 
 .shiftLeft {
-    transform: translateX(200%);
+  transform: translateX(200%);
 }
 
 .contentContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 60px auto;
+  overflow: hidden;
 }
 .content {
-    text-align: center;
+  text-align: center;
 }
 .content h3 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #226a54;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #226a54;
 }
 .content p {
-    padding: 30px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    background-color: #bfeabf;
-    margin: 20px;
+  padding: 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #0000008f;
+  background-color: #bfeabf;
+  margin: 20px;
 }
 
 #carousel {
-    background-color: #226a54;
-    margin-top: 20px;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-
+  background-color: #226a54;
+  margin-top: 20px;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
 }
 #carousel i {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 /*advantages section*/
 .advantages {
-    display: flex;
-    /* flex-wrap: wrap; media queries */
-    justify-content: space-evenly;
-    text-align: center;
-    gap: 30px;
-    margin: 30px;
+  display: flex;
+  /* flex-wrap: wrap; media queries */
+  justify-content: space-evenly;
+  text-align: center;
+  gap: 30px;
+  margin: 30px;
 }
 
 .secondRow {
-    margin: 0px 10%;
-    padding: 20px;
-    margin-top: -15px;
+  margin: 0px 10%;
+  padding: 20px;
+  margin-top: -15px;
 }
 
 .advantages h3 {
-    color: #004b70;
-    padding: 10px;
+  color: #004b70;
+  padding: 10px;
 }
 .advantages div {
-    border-radius: 10px;
-    background-color: lightblue;
-    padding: 40px 20px;
+  border-radius: 10px;
+  background-color: lightblue;
+  padding: 40px 20px;
 }
 .advantages img {
-    height: 70px;
-    border-radius: 40px;
-    margin-top: -10px;
+  height: 70px;
+  border-radius: 40px;
+  margin-top: -10px;
 }
 .advantages p {
-    font-size: 0.85rem;
+  font-size: 0.85rem;
 }
 
 .banner {
-    position: relative;
-
+  position: relative;
 }
 .banner img {
-    height: 600px;
-    width: 100%;
-    padding: 20px;
-    filter: brightness(80%);
+  height: 600px;
+  width: 100%;
+  padding: 20px;
+  filter: brightness(80%);
 }
 .bannerContent {
-    padding: 30px;
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    color: white;
-    width: 60%;
+  padding: 30px;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  width: 60%;
 }
 .banner h3 {
-    text-align: left;
-    font-size: 2.3rem;
-    padding: 10px;
-    font-weight: bolder;
+  text-align: left;
+  font-size: 2.3rem;
+  padding: 10px;
+  font-weight: bolder;
 }
 
 /*activity categories*/
 .activity h2 {
-    padding: 40px 0px;
+  padding: 40px 0px;
 }
 .activityCategories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 .activityCategories img {
-    height: 220px;
-    width: 270px;
-    transition: transform 300ms;
-    border-radius: 5px;
+  height: 220px;
+  width: 270px;
+  transition: transform 300ms;
+  border-radius: 5px;
 }
 .activityCategories img:hover {
-    transform: scale(1.05);
-    filter: brightness(110%);
+  transform: scale(1.05);
+  filter: brightness(110%);
 }
 .activityTitle {
-    padding-left: 70px;
-    font-size: 1.5rem;
-    margin-top: 60px;
+  padding-left: 70px;
+  font-size: 1.5rem;
+  margin-top: 60px;
 }
 h4 {
-    padding: 10px;
+  padding: 10px;
 }
 
 /*little banner*/
 .littleBannerContainer {
-    height: auto;
-    background-color: #fff7e1;
-    margin: 60px 0px 100px 0px;
+  height: auto;
+  background-color: #fff7e1;
+  margin: 60px 0px 100px 0px;
 }
 .littleBannerContainer h3 {
-    text-align: left;
-    font-size: 1.5rem;
-    padding: 30px;
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 30px;
 }
 .lbContent {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 .lbContent img {
-    height: 200px;
-    transition: transform 200ms;
+  height: 200px;
+  transition: transform 200ms;
 }
 .lbContent img:hover {
-    transform: scale(1.05);
-    filter: brightness(105%);
+  transform: scale(1.05);
+  filter: brightness(105%);
 }
 .lbContent h4 {
-    text-align: center;
+  text-align: center;
+}
+
+/*carousel reviews*/
+.carouselContainer {
+  background-color: black;
 }
 
 /*footer*/
-.footer{
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    height: 300px;
-    text-align: justify;
-    
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  height: auto;
+  text-align: justify;
 }
-.footer h4{
-   padding: 20px 0px; 
+.footer h4 {
+  padding: 20px 0px;
+  color: white;
+  text-align: center;
 }
-.footer i{
-    font-size: 2rem;
+.footer i {
+  font-size: 2rem;
 }
-.footer ul{
-    list-style: none;
-    line-height: 30px;
+.footer ul {
+  list-style: none;
+  line-height: 30px;
 }
-.footerLeft{
-    display: flex;
-    justify-content: center;
-    align-items: first baseline;
-    gap: 20%;
-    padding: 30px 30px;
-   
-    color: white;
-    width: auto;
-}
-.vertBorder{
-    border-left: 2px solid white;
-    height: 200px;
-    margin: auto;
-}
-.footerRight{
-    margin-top: 30px;
-    width: 30%;
-    height: auto;
-}
-.socialMedia ul{
-    display: flex;
-    justify-content: center;
-    align-items: first baseline;
-    gap: 7%;
-}
-.footerLeft, .footerRight{
-    flex: 1;
-}
+.footerLeft {
+  display: flex;
+  justify-content: center;
+  align-items: first baseline;
+  gap: 20%;
+  padding: 30px 30px;
 
-
+  color: white;
+  width: auto;
+}
+.vertBorder {
+  border-left: 2px solid white;
+  height: 200px;
+  margin: auto;
+}
+.footerRight {
+  width: 30%;
+  height: auto;
+}
+.socialMedia {
+  margin-top: 27px;
+}
+.socialMedia ul {
+  display: flex;
+  justify-content: center;
+  align-items: first baseline;
+  gap: 7%;
+}
+footer i {
+  color: white;
+}
+.footerLeft,
+.footerRight {
+  flex: 1;
+}
 
 /* #dcc8ff violet stylé pour (petite) bannière
 vert pale #e3f0e3
 vert foncé #226a54
 sable #fee39a
 sable clair #fff7e1 */
+
+/*modal connexion*/

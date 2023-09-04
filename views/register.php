@@ -1,42 +1,51 @@
 <!-- modale connexion -->
 
-<link rel="stylesheet" href="../assets/css/register.css">
-<div class="modalContainer">
-      <h1>Se connecter</h1>
-      <div class="formConnexion">
-        <form action="" method="POST">
-          <label for="email">Adresse mail</label>
-          <div class="email">
-            <i class="fa-solid fa-user"></i>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="jeandupont@gmail.com"
-            />
-          </div>
+<?php if (isset($formErrors['general'])) { ?>
+    <p><?= $formErrors['general'] ?></p>
+<?php } ?>
 
-          <label for="password">Mot de passe</label>
-          <div class="password">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" name="password" id="password" />
-          </div>
+<?php if (isset($success)) { ?>
+    <p>Votre inscription a bien été prise en compte.</p>
+    <p>Vous pouvez <a href="connexion">vous connecter</a> dès maintenant.</p>
+<?php } else { ?>
 
-          <p class="forgotPassword"><a href="">Mot de passe oublié ?</a></p>
+    <h1>Inscription</h1>
 
-          <div class="rememberMe">
-            <input type="checkbox" name="rememberMe" id="rememberMe" />
-            <label for="rememberMe">Se souvenir de moi</label>
-          </div>
-          <div class="connexion">
-            <button class="btnLogin">Connexion</button>
-            <p>Vous n'avez pas encore de compte ?</p>
-            <button class="btnAccount">Créer un compte</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <script
-      src="https://kit.fontawesome.com/17e72c725f.js"
-      crossorigin="anonymous"
-    ></script>
+    <form id="registerForm" action="/connexion" method="post">
+
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" name="username" id="username" placeholder="Globox" value="<?= @$_POST['username'] ?>">
+        <?php if (isset($formErrors['username'])) { ?>
+            <p><?= $formErrors['username'] ?></p>
+        <?php } ?>
+
+        <label for="email">Adresse e-mail</label>
+        <input type="email" name="email" id="email" placeholder="globox@gmail.com" value="<?= @$_POST['email'] ?>">
+        <?php if (isset($formErrors['email'])) { ?>
+            <p><?= $formErrors['email'] ?></p>
+        <?php } ?>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" placeholder="********">
+        <?php if (isset($formErrors['password'])) { ?>
+            <p><?= $formErrors['password'] ?></p>
+        <?php } ?>
+
+        <label for="passwordConfirm">Confirmation du mot de passe</label>
+        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="********">
+        <?php if (isset($formErrors['passwordConfirm'])) { ?>
+            <p><?= $formErrors['passwordConfirm'] ?></p>
+        <?php } ?>
+
+        <label for="birthdate">Date de naissance</label>
+        <input type="date" name="birthdate" id="birthdate" value="<?= @$_POST['birthdate'] ?>">
+        <?php if (isset($formErrors['birthdate'])) { ?>
+            <p><?= $formErrors['birthdate'] ?></p>
+        <?php } ?>
+
+        <input type="submit" value="Inscription">
+    </form>
+<?php } ?>
+
+  
+  

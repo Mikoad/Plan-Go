@@ -4,12 +4,12 @@
           <div>
             <h4>Plan du site</h4>
             <ul>
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="recherche.html">Recherche</a></li>
-              <li><a href="groupe.html">Groupe</a></li>
-              <li><a href="profil.html">Profil</a></li>
-              <li><a href="">Se connecter</a></li>
-              <li><a href="">S'inscrire</a></li>
+              <li><a href="accueil">Accueil</a></li>
+              <li><a href="recherche">Recherche</a></li>
+              <li><a href="groupe">Groupe</a></li>
+              <li><a href="profil">Profil</a></li>
+              <li><a href="connexion">Se connecter</a></li>
+              <li><a href="inscription">S'inscrire</a></li>
             </ul>
           </div>
           <div>
@@ -52,10 +52,6 @@
             <a href="">Retour en haut</a>
         </div> -->
     </footer>
-    <script
-      src="https://kit.fontawesome.com/17e72c725f.js"
-      crossorigin="anonymous"
-    ></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

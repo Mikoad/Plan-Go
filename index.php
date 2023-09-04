@@ -1,13 +1,8 @@
-<?php 
-$title = 'Accueil';
-require_once 'controllers/indexController.php';
-require_once 'views/parts/header.php'; 
-include 'assets/css/style.css';
-?>
+
     <main>
     <section>
     <div class="headerContainer">
-        <img class="imgHeader" src="assets/img/heeader2.jpg" alt="Paysage" />
+        <img class="imgHeader" src="../assets/img/heeader2.jpg" alt="Paysage" />
         <div class="headerContent">
           <h1>Plan&Go</h1>
           <p>
@@ -16,14 +11,14 @@ include 'assets/css/style.css';
             <span>réservez</span> vos activités et logements, et
             <span>organisez</span>-vous au même endroit.
           </p>
-          <button class="btn">C'est parti !</button>
+          <button class="btn">Réservez</button>
         </div>
       </div>
             <div class="contentContainer">
                 <h2>Comment ça marche ?</h2>
                 <div class="content">
                     <h3 class="title">Présentation</h3>
-                    <p class="paragraph">Plan&Go vous permet d'organiser vos vacances de manière simple et rapide. Faîtes toutes vos réservations d'activités, de logements et de séances bien être au même endroit. Plan&Go vous permet d'organiser vos vacances de manière simple et rapide. Faîtes toutes vos réservations d'activités, de logements et de séances bien être au même endroit. Faîtes toutes vos réservations d'activités, de logements et de séances bien être au même endroit. Plan&Go vous permet d'organiser vos vacances de manière simple et rapide. Faîtes toutes vos réservations d'activités, de logements et de séances bien être au même endroit </p>
+                    <p class="paragraph"></p>
                 </div>
                 <div>
                      <button id="carousel">Suivant <i class="fa-solid fa-chevron-right"></i></button>
@@ -32,6 +27,7 @@ include 'assets/css/style.css';
             </div>
             
             </section>
+            
             <!-- <div class="border"></div> -->
     
             <!-- section liste d'avantages -->
@@ -100,5 +96,39 @@ include 'assets/css/style.css';
                 </div>
             </div>
             </section>
+            <div class="littleBannerContainer">
+        <h3>Profitez d'un moment de détente</h3>
+        <div class="lbContent">
+          <div>
+            <img src="assets/img/spa.jpg" alt="Image de Spa" />
+            <h4>Spa</h4>
+          </div>
+          <div>
+            <img src="assets/img/retraite.jpg" alt="Image de Retraites Santé" />
+            <h4>Retraites</h4>
+          </div>
+          <div>
+            <img src="assets/img/cure.jpg" alt="Image de Cure" />
+            <h4>Cures</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- carousel reviews -->
+      <div class="carouselContainer">
+        <div class="avis">
+            <p>"Cet endroit est incroyable !"</p>
+            <p class="nom">- Jean Dupont</p>
+        </div>
+        <div class="avis">
+            <p>"Le meilleur service que j'ai jamais eu."</p>
+            <p class="nom">- Marie Martin</p>
+        </div>
+        <div class="avis">
+            <p>"Une expérience exceptionnelle."</p>
+            <p class="nom">- Pierre Dubois</p>
+        </div>
+    </div>
+    
     </main>
-<?php require_once 'views/parts/footer.php';
+    

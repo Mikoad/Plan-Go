@@ -1,0 +1,77 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 20px;
+}
+input[type="search"] {
+  padding: 5px;
+  width: 30%;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid gray;
+}
+.allSelect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgb(243, 216, 168);
+  height: auto;
+  padding: 20px;
+  margin: auto;
+  width: 80%;
+}
+select {
+  border: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: transparent;
+  width: 20%;
+  text-align: center;
+}
+option {
+  background-color: rgb(243, 216, 168);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+img {
+  height: 30px;
+}
+ul li {
+  list-style: none;
+}
+.suggestions {
+  margin-top: 30px;
+}
+.suggestions h2 {
+  margin: 60px 0 0 0;
+}
+.suggestions h2,
+.suggestions h3 {
+  text-align: start;
+}
+.bannerSuggestion {
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+.cardSuggest {
+  border: 1px solid black;
+  overflow: hidden;
+  background: white;
+  width: 400px;
+  height: auto;
+}
+.cardSuggest img {
+  height: 200px;
+}

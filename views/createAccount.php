@@ -51,6 +51,7 @@
           <div class="connexion">
             <button type="submit" class="btnLogin">Valider</button>
           </div>
+          <!-- + username et cardNumber -->
         </form>
       </div>
     </div>
