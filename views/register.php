@@ -11,7 +11,7 @@
 
     <h1>Inscription</h1>
 
-    <form id="registerForm" action="/connexion" method="post">
+    <form id="registerForm" action="inscription" method="post">
 
         <label for="username">Nom d'utilisateur</label>
         <input type="text" name="username" id="username" placeholder="Globox" value="<?= @$_POST['username'] ?>">
@@ -46,6 +46,3 @@
         <input type="submit" value="Inscription">
     </form>
 <?php } ?>
-
-  
-  

@@ -1,8 +1,9 @@
 RewriteEngine On
 RewriteRule ^accueil$ controllers/indexController.php
 RewriteRule ^recherche$ controllers/searchController.php
-RewriteRule ^groupe$ controllers/groupController.php
+RewriteRule ^ajout-groupe$ controllers/addGroupController.php
 RewriteRule ^profil$ controllers/profileController.php
 RewriteRule ^inscription$ controllers/registerController.php
 RewriteRule ^connexion$ controllers/loginController.php
 RewriteRule ^deconnexion$ controllers/logoutController.php
+RewriteRule ^réservations$ controllers/addReservationController.php

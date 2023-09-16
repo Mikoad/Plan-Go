@@ -1,6 +1,7 @@
 <?php
 
-class users {
+class users
+{
     public $id;
     public $username;
     public $email;
@@ -10,15 +11,17 @@ class users {
     public $id_usersRoles;
     private $db;
 
-    public function __construct() {
-        try{
-            $this->db = new PDO('mysql:host=localhost;dbname=plan&go;charset=utf8', 'u7dat_admin', 'plan&go2587');
-        } catch(PDOException $e) {
+    public function __construct()
+    {
+        try {
+            $this->db = new PDO('mysql:host=localhost;dbname=plango;charset=utf8', 'u7dat_admin', 'plan&go2587');
+        } catch (PDOException $e) {
             //Renvoyer vers une page d'erreur
         }
     }
 
-    public function add(){
+    public function add()
+    {
         $query = 'INSERT INTO `u7dat_users` (`username`, `email`,`password`, `birthdate`, `registerDate`, `id_usersRoles`) 
         VALUES (:username, :email, :password, :birthdate, NOW(), 1)';
 
@@ -30,7 +33,8 @@ class users {
         return $request->execute();
     }
 
-    public function checkAvaibility() {
+    public function checkAvaibility()
+    {
         $query = 'SELECT COUNT(*) FROM `u7dat_users` WHERE email = :email';
         $request = $this->db->prepare($query);
         $request->bindValue(':email', $this->email, PDO::PARAM_STR);
@@ -38,7 +42,8 @@ class users {
         return $request->fetch(PDO::FETCH_COLUMN);
     }
 
-    public function getHash(){
+    public function getHash()
+    {
         $query = 'SELECT `password` FROM `u7dat_users` WHERE `email` = :email;';
         $request = $this->db->prepare($query);
         $request->bindValue(':email', $this->email, PDO::PARAM_STR);
@@ -46,13 +51,12 @@ class users {
         return $request->fetch(PDO::FETCH_COLUMN);
     }
 
-    public function getInfos(){
+    public function getInfos()
+    {
         $query = 'SELECT `id`, `username`, `id_usersRoles` FROM `u7dat_users` WHERE `email` = :email';
         $request = $this->db->prepare($query);
         $request->bindValue(':email', $this->email, PDO::PARAM_STR);
         $request->execute();
         return $request->fetch(PDO::FETCH_ASSOC);
     }
-
-} 
-?>
+}

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../models/usersModel.php';
 //var_dump($_POST);
 
@@ -31,7 +33,6 @@ if (count($_POST) > 0) {
                 }
             } catch (PDOException $e) {
                 $formErrors['general'] = 'Une erreur est survenue, l\'administrateur a été prévenu';
-           
             }
         } else {
             $formErrors['email'] = 'Votre adresse e-mail n\'est pas valide. Elle ne peut comporter que des lettres, tirets, underscores, points et chiffres.';
@@ -77,7 +78,7 @@ if (count($_POST) > 0) {
 
     if (count($formErrors) == 0) {
         try {
-            if($user->add()) {
+            if ($user->add()) {
                 $success = true;
             }
         } catch (PDOException $e) {
@@ -90,5 +91,3 @@ if (count($_POST) > 0) {
 require_once '../views/parts/header.php';
 require_once '../views/register.php';
 require_once '../views/parts/footer.php';
-
-?>

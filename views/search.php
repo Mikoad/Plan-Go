@@ -1,5 +1,3 @@
-
-
 <main>
     <section class="search">
         <div class="searchBar">
@@ -34,92 +32,25 @@
             </select>
             <div id="filterBtn">
                 <button><img src="../assets/img/filtre.png" alt="filtres"></button>
-                <!-- <div>
-                    <ul>
-                        <li>Prix croissant</li>
-                        <li>Prix décroissant</li>
-                        <li>Promotions</li>
-                        <li>Les mieux notées</li>
-                    </ul>
-                </div> -->
             </div>
-            
         </div>
-
     </section>
 
-    <section class="suggestions">
-        <h2>Les meilleurs hotêls</h2>
+    <!-- insérer les réservations via $reservation->getList() -->
+    <section class=suggestions>
+        <h2>Suggestions</h2>
         <div class="bannerSuggestion">
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
+            <?php foreach ($reservationList as $rl) { ?>
+                <div class="cardSuggest">
+                    <img src="assets/img/<?= $rl->image ?>" alt="<?= $rl->name ?>">
+                    <h3><?= $rl->name ?></h3>
+                    <p><?= $rl->description ?></p>
+                    <p><?= $rl->price ?>€</p>
+                </div>
+            <?php } ?>
         </div>
+    </section>
 
-        <h2>Les meilleures activiités</h2>
-        <div class="bannerSuggestion">
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-        </div>
 
-        <h2>Les meilleures séances bien-être</h2>
-        <div class="bannerSuggestion">
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-            <div class="cardSuggest">
-                <img src="assets/img/banner-hotel.jpg" alt="">
-                <h3>Visite guidée</h3>
-                <p>à partir de 50 euros</p>
-            </div>
-        </div>
-    
     </section>
 </main>
