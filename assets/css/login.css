@@ -87,9 +87,3 @@ i {
 }
 
 /*error*/
-.error {
-  font-size: 0.7rem;
-  color: red;
-  margin-left: 30px;
-  margin-bottom: 10px;
-}

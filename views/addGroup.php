@@ -1,19 +1,24 @@
 <main>
-    <h1>Créez votre groupe dès à présent</h1>
+    <h1>Créez votre groupe</h1>
     <form action="ajout-groupe" method="POST">
-        <label for="groupName">Nom du groupe</label>
-        <input type="text" name="groupName" id="groupName">
+        <label for="name">Nom du groupe</label>
+        <input type="text" name="name" id="name">
 
-        <label for="groupeDescription">Description du groupe</label>
-        <textarea name="groupeDescription" id="groupeDescription" cols="30" rows="2"></textarea>
+        <label for="description">Description du groupe</label>
+        <textarea name="description" id="description" cols="30" rows="2"></textarea>
 
-        <div>
-            <div class="groupMember">
-                <button id="addMember"><i class="fa-solid fa-plus"></i></button>
-            </div>
 
-        </div>
-        <button id="test"></button>
+        <!-- <div class="groupMember">
+            <label for="members">Membres du groupe</label>
+            <div id="addMember"><i class="fa-solid fa-plus"></i></div>
+        </div> -->
+
+        <label for="members">Membres du groupe</label>
+        <input type="email" name="email[]" id="members[]">
+        <input type="email" name="email[]" id="members[]">
+        <input type="email" name="email[]" id="members[]">
+
+        <!-- voir pour js input -->
         <input type="submit" value="Créer" name="add">
     </form>
 </main>

@@ -21,6 +21,14 @@ class groups
         $request = $this->db->prepare($query);
         $request->bindValue(":name", $this->name, PDO::PARAM_STR);
         $request->bindValue(":description", $this->description, PDO::PARAM_STR);
-        return $request->execute();
+        $request->execute();
+        return $this->db->lastInsertId();
+    }
+
+    public function getList()
+    {
+        $query = 'SELECT `name`, SUBSTR(`description`, 1, 50) AS `description` FROM `u7dat_groups`;';
+        $request = $this->db->query($query);
+        return $request->fetchAll(PDO::FETCH_OBJ);
     }
 }

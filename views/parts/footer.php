@@ -1,7 +1,7 @@
 <footer>
   <section class="footer">
     <div class="footerLeft">
-      <div>
+      <div class="plan">
         <h4>Plan du site</h4>
         <ul>
           <li><a href="accueil">Accueil</a></li>
@@ -25,8 +25,6 @@
         </ul>
       </div>
     </div>
-
-    <div class="vertBorder"></div>
 
     <div class="footerRight">
       <div class="socialMedia">
@@ -53,6 +51,7 @@
         </div> -->
 </footer>
 <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>

@@ -2,8 +2,12 @@ RewriteEngine On
 RewriteRule ^accueil$ controllers/indexController.php
 RewriteRule ^recherche$ controllers/searchController.php
 RewriteRule ^ajout-groupe$ controllers/addGroupController.php
+RewriteRule ^liste-groupes$ controllers/groupsListController.php
+RewriteRule ^messagerie$ controllers/messagesController.php
+
 RewriteRule ^profil$ controllers/profileController.php
+RewriteRule ^inscription-([0-9]+)$ controllers/registerController.php?id_groups=$1
 RewriteRule ^inscription$ controllers/registerController.php
 RewriteRule ^connexion$ controllers/loginController.php
 RewriteRule ^deconnexion$ controllers/logoutController.php
-RewriteRule ^réservations$ controllers/addReservationController.php
+RewriteRule ^ajouter-réservations$ controllers/addReservationController.php

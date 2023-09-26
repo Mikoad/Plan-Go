@@ -42,10 +42,12 @@
         <div class="bannerSuggestion">
             <?php foreach ($reservationList as $rl) { ?>
                 <div class="cardSuggest">
-                    <img src="assets/img/<?= $rl->image ?>" alt="<?= $rl->name ?>">
+                    <img src="<?= $rl->image ?>" alt="<?= $rl->name ?>">
                     <h3><?= $rl->name ?></h3>
                     <p><?= $rl->description ?></p>
                     <p><?= $rl->price ?>€</p>
+                    au clic sur ce bouton, la réservation s'ajoute au planning
+                    <button id="addToPlanning"><i class="fa-solid fa-plus"></i></button>
                 </div>
             <?php } ?>
         </div>

@@ -1,4 +1,4 @@
-<form action="réservations" method="POST" enctype="multipart/form-data">
+<form action="ajouter-réservations" method="POST" enctype="multipart/form-data">
     <label for="name">Titre de la réservation</label>
     <input type="text" name="name" id="name">
 

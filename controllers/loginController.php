@@ -1,12 +1,13 @@
 <?php
 session_start();
 require_once '../models/usersModel.php';
+require_once '../models/groupsMembersModel.php';
 
 $formErrors = [];
 
 if (count($_POST) > 0) {
     //Etape 1 vérifier que l'user existe
-    $user = new users();
+    $user = new users;
 
     if (!empty($_POST['email'])) {
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -27,6 +28,16 @@ if (count($_POST) > 0) {
             $user->password = $user->getHash();
             if (password_verify($_POST['password'], $user->password)) {
                 $_SESSION['user'] = $user->getInfos();
+                $_SESSION['user']['email'] = $user->email;
+                if (isset($_SESSION['id_groups_add'])) {
+                    $gm = new groupsMembers;
+                    $gm->id_groups = $_SESSION['id_groups_add'];
+                    $gm->id_users = $_SESSION['user']['id'];
+
+                    $gmAdd = $gm->add();
+                }
+
+
                 header('Location:/profil');
                 exit;
             } else {
@@ -38,36 +49,7 @@ if (count($_POST) > 0) {
     }
 }
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-//     $email = $_POST["email"];
-//     $password = $_POST["password"];
-
-
-//     if (validerUtilisateur($email, $password)) {
-
-//         $_SESSION["email"] = $email;
-
-
-//         if (isset($_POST["remember"])) {
-
-//             $cookie_name = "remember_user";
-//             $cookie_value = $email;
-//             $cookie_expire = time() + 30 * 24 * 60 * 60; 
-//             setcookie($cookie_name, $cookie_value, $cookie_expire, "/");
-//         }
-
-
-//         header("Location: accueil.php");
-//         exit();
-//     } else {
-//         echo "Identifiants incorrects. Veuillez réessayer.";
-//     }
-// }
-
-// function validerUtilisateur($email, $password) {
-//     return false;
-// }
 
 
 require_once '../views/parts/header.php';

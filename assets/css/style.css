@@ -28,6 +28,13 @@ footer a {
   color: white;
 }
 
+.error {
+  font-size: 0.8rem;
+  color: rgb(217, 0, 0);
+  text-align: justify;
+  padding: 5px;
+}
+
 /*buttons*/
 .btn {
   padding: 13px;
@@ -189,9 +196,10 @@ span {
   box-shadow: 0px 0px 10px 0px #0000008f;
   background-color: #bfeabf;
   margin: 20px;
+  width: 50vw;
 }
 
-/* #carousel {
+#carousel {
   background-color: #226a54;
   margin-top: 20px;
   color: white;
@@ -202,7 +210,8 @@ span {
 }
 #carousel i {
   margin-left: 5px;
-} */
+  color: white;
+}
 
 /*advantages section*/
 .advantages {
@@ -214,11 +223,11 @@ span {
   margin: 30px;
 }
 
-/* .secondRow {
+.secondRow {
   margin: 0px 10%;
   padding: 20px;
   margin-top: -15px;
-} */
+}
 
 .advantages h3 {
   color: #004b70;
@@ -329,12 +338,11 @@ h4 {
   background-color: black;
   height: auto;
   margin-top: 100px;
-  text-align: justify;
+  text-align: start;
+  color: white;
 }
 .footer h4 {
   padding: 10px 0px;
-  color: white;
-  text-align: center;
 }
 .footer i {
   font-size: 2rem;
@@ -347,19 +355,16 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: first baseline;
-  gap: 20%;
-  padding: 30px 20px;
-
-  color: white;
-  width: auto;
+  gap: 40px;
+  padding: 30px;
 }
-.vertBorder {
+
+/* .vertBorder {
   border-left: 2px solid white;
   height: 200px;
   margin: auto;
-}
+} */
 .footerRight {
-  width: 30%;
   height: auto;
 }
 .socialMedia {
@@ -368,15 +373,11 @@ h4 {
 .socialMedia ul {
   display: flex;
   justify-content: center;
-  align-items: first baseline;
-  gap: 7%;
+  align-items: center;
+  gap: 10px;
 }
 footer i {
   color: white;
-}
-.footerLeft,
-.footerRight {
-  flex: 1;
 }
 
 /* #dcc8ff violet stylé pour (petite) bannière

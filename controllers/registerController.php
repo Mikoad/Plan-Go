@@ -1,8 +1,11 @@
 <?php
 session_start();
-
+if (isset($_GET['id_groups'])) {
+    $_SESSION['id_groups_add'] = $_GET['id_groups'];
+    var_dump($_SESSION);
+}
 require_once '../models/usersModel.php';
-//var_dump($_POST);
+
 
 $regex = [
     'username' => '/^(?=.*[a-zA-Z]{3,})[a-zA-Z0-9-]+$/',
@@ -28,6 +31,7 @@ if (count($_POST) > 0) {
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $user->email = strip_tags($_POST['email']);
             try {
+                //vérification de la disponibilté de l'email dans la bdd
                 if ($user->checkAvaibility() == 1) {
                     $formErrors['email'] = 'L\'adresse mail est déjà utilisée.';
                 }
@@ -52,6 +56,7 @@ if (count($_POST) > 0) {
     if (!empty($_POST['passwordConfirm'])) {
         if (!isset($formErrors['password'])) {
             if ($_POST['password'] == $_POST['passwordConfirm']) {
+                //haché le mot de passe avant de l'envoyer dans la bdd
                 $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             } else {
                 $formErrors['password'] = $formErrors['passwordConfirm'] = 'Les mots de passes ne correspondent pas.';
@@ -75,7 +80,7 @@ if (count($_POST) > 0) {
     } else {
         $formErrors['birthdate'] = 'Veuillez renseigner votre date de naissance.';
     }
-
+    //s'il n'y a pas d'erreur, ajouter l'utilisateur à la bdd avec add()
     if (count($formErrors) == 0) {
         try {
             if ($user->add()) {
