@@ -1,8 +1,11 @@
 <?php
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('Location: connexion');
+}
 $title = 'Profil';
 require_once '../models/usersModel.php';
-
+//peut être ne faire qu'une seule instanciation et remplacer par $userUpdate->id = $_SESSION['user']['id'];
 $user = new users;
 $user->id = $_SESSION['user']['id'];
 
@@ -49,7 +52,7 @@ if (isset($_POST['updateInfos'])) {
         try {
             if ($userUpdate->updateInfos()) {
                 $_SESSION['user']['username'] = $_POST['username'];
-                $success = true;
+                $success['updateInfos'] = 'Vos informations ont bien été modifié.';
             }
         } catch (PDOException $e) {
             $formErrors['general'] = 'Une erreur est survenue, l\'administrateur a été prévenu';
@@ -57,7 +60,7 @@ if (isset($_POST['updateInfos'])) {
         }
     }
 }
-$userDetails = $user->getOneById();
+
 
 if (isset($_POST['updatePassword'])) {
     if (!empty($_POST['currentPassword'])) {
@@ -81,7 +84,7 @@ if (isset($_POST['updatePassword'])) {
     if (!empty($_POST['passwordConfirm'])) {
         if (!isset($formErrors['newPassword'])) {
             if ($_POST['newPassword'] == $_POST['passwordConfirm']) {
-                $user->password = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
+                $userUpdate->password = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
             } else {
                 $formErrors['newPassword'] = $formErrors['passwordConfirm'] = 'Les mots de passes ne correspondent pas.';
             }
@@ -94,7 +97,7 @@ if (isset($_POST['updatePassword'])) {
         $userUpdate->id = $_SESSION['user']['id'];
         try {
             if ($userUpdate->updatePassword()) {
-                $success = true;
+                $success['password'] = 'Votre mot de passe à bien été modifié';
             }
         } catch (PDOException $e) {
             $formErrors['general'] = 'Une erreur est survenue, l\'administrateur a été prévenu';
@@ -102,7 +105,19 @@ if (isset($_POST['updatePassword'])) {
         }
     }
 }
-var_dump($_POST);
+
+if (isset($_POST['delete'])) {
+    if ($user->deleteAccount()) {
+        unset($_SESSION['user']);
+        session_destroy();
+        header('Location: /accueil');
+        exit;
+    }
+}
+
+$userDetails = $user->getOneById();
+//voir la view reservation quand je clique sur l'oeil
+//supprimer la reservation du planning au clic sur trash
 
 require_once '../views/parts/header.php';
 require_once '../views/profile.php';

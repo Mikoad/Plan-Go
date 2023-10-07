@@ -1,18 +1,36 @@
-.searchBar {
+.searchBar form {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  gap: 20px;
+  height: auto;
+  padding: 15px;
+  gap: 30px;
+  margin: 50px auto;
+
+  box-shadow: 0px 0px 10px 2px #00000059;
+  border-radius: 40px;
+  width: 60vw;
 }
-input[type="search"] {
+.searchBar input[type="search"] {
   padding: 5px;
   width: 30%;
   border-radius: 5px;
   border: none;
   border: 1px solid gray;
 }
-.allSelect {
+.searchBar input[type="submit"] {
+  border: none;
+  background: rgb(10, 10, 10);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 12px;
+  transition: 0.2s ease-in-out;
+}
+.searchBar input[type="submit"]:hover {
+  transform: scale(1.05);
+}
+.allSelect form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +41,7 @@ input[type="search"] {
   margin: auto;
   width: 80%;
 }
+
 select {
   border: none;
   border: 1px solid black;
@@ -31,7 +50,15 @@ select {
   background-color: transparent;
   width: 20%;
 }
-option {
+.allSelect input[type="submit"] {
+  border: none;
+  border-radius: 20px;
+  width: 80px;
+  padding: 8px;
+  background-color: darkgreen;
+  color: white;
+}
+.allSelect option {
   background-color: rgb(243, 216, 168);
 }
 
@@ -70,29 +97,35 @@ ul li {
   flex-direction: column;
 
   align-items: center;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   box-shadow: 0px 0px 5px 1px #0000007d;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   overflow: hidden;
   background: white;
   width: 250px;
-  height: 270px;
+  height: 290px;
   position: relative;
 }
-.cardSuggest button {
-  background: orangered;
-  border-radius: 30px;
+.cardSuggest a {
+  border: none;
+  text-decoration: none;
+  background: rgb(10, 10, 10);
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  padding: 10px;
   margin: 10px;
-  padding: 3px 8px 5px 8px;
-  cursor: pointer;
-  position: absolute;
-  top: 52%;
-  left: 80%;
+  transition: 0.2s ease-in-out;
+}
+
+.cardSuggest a:hover {
+  transform: scale(1.05);
 }
 .cardSuggest img {
   height: 140px;
-  width: auto;
+  width: 250px;
   margin-top: -10px;
 }
 .cardSuggest p {
@@ -102,6 +135,120 @@ ul li {
   font-weight: bold;
   margin-top: 10px;
 }
-.cardSuggest i {
+#addToPlanning {
+  background: white;
+  border: 2px solid orangered;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.cardSuggest #addToPlanning {
+  position: absolute;
+  top: 0;
+  left: 81%;
+}
+#addToPlanning i {
+  color: orangered;
+  margin-top: 1px;
+}
+#addToPlanning:hover {
+  background: orangered;
+  scale: 1.05;
+}
+#addToPlanning:hover i {
   color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .labelSearch {
+    display: none;
+  }
+}
+
+/*reservation details style*/
+.reservationDetails {
+  margin: 50px 10px;
+}
+
+.reservation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.imgReservation {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.reservation h2 {
+  margin-bottom: 20px;
+}
+.imgReservation img {
+  height: 250px;
+}
+
+.description h3 {
+  margin: -10px;
+}
+.description p {
+  padding: 5px;
+  margin: 10px auto;
+  width: 50vw;
+  text-align: center;
+}
+.description span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/*form update - delete reservation style*/
+.updateRes {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  box-shadow: 0 0 6px 2px #0000006e;
+  padding: 30px;
+  margin: 30px auto;
+  width: 75vw;
+}
+.updateRes .error,
+.updateRes .success {
+  margin: auto;
+}
+.updateRes h1 {
+  font-size: 2.3rem;
+}
+.updateRes form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 70vw;
+}
+.updateRes label,
+.updateRes input {
+  text-align: center;
+  width: 50vw;
+  margin: auto;
+}
+.updateRes select {
+  width: 50%;
+  margin: auto;
+}
+.updateRes input[type="submit"] {
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: rgb(53, 116, 243);
+  color: white;
+  margin-top: 10px;
+}
+.deleteForm input[type="submit"] {
+  background: rgb(189, 12, 12);
 }

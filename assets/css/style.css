@@ -6,13 +6,15 @@
   font-family: "Lato", sans-serif;
 }
 
-h1 {
-  font-size: 3rem;
-  padding: 20px;
+#nav span a {
+  font-size: 2rem;
+  padding: 15px;
+
+  font-family: "Alfa Slab One", cursive;
 }
 
 h2,
-h3 {
+main h3 {
   font-weight: bold;
   text-align: center;
   padding: 10px;
@@ -33,6 +35,12 @@ footer a {
   color: rgb(217, 0, 0);
   text-align: justify;
   padding: 5px;
+}
+.success {
+  color: rgb(8, 166, 8);
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 /*buttons*/
@@ -85,7 +93,7 @@ nav ul {
   font-size: 0.9rem;
   color: white;
   font-weight: bold;
-
+  height: 70px;
   position: relative;
   width: 70%;
 }
@@ -223,12 +231,6 @@ span {
   margin: 30px;
 }
 
-.secondRow {
-  margin: 0px 10%;
-  padding: 20px;
-  margin-top: -15px;
-}
-
 .advantages h3 {
   color: #004b70;
   padding: 10px;
@@ -237,6 +239,7 @@ span {
   border-radius: 10px;
   background-color: lightblue;
   padding: 40px 20px;
+  width: 50%;
 }
 .advantages img {
   height: 70px;
@@ -254,7 +257,7 @@ span {
   height: 600px;
   width: 100%;
   padding: 20px;
-  filter: brightness(80%);
+  filter: brightness(60%);
 }
 .bannerContent {
   padding: 30px;
@@ -262,7 +265,7 @@ span {
   bottom: 10%;
   left: 5%;
   color: white;
-  width: 60%;
+  width: 60vw;
 }
 .banner h3 {
   text-align: left;
@@ -297,7 +300,7 @@ span {
   font-size: 1.5rem;
   margin-top: 60px;
 }
-h4 {
+main h4 {
   padding: 10px;
 }
 
@@ -331,53 +334,64 @@ h4 {
   text-align: center;
 }
 
-/*footer*/
-.footer {
+/*footer style*/
+
+footer {
   display: flex;
   justify-content: space-around;
-  background-color: black;
-  height: auto;
-  margin-top: 100px;
-  text-align: start;
   color: white;
-}
-.footer h4 {
-  padding: 10px 0px;
-}
-.footer i {
-  font-size: 2rem;
-}
-.footer ul {
-  list-style: none;
+  background: black;
+  padding: 20px;
   line-height: 30px;
 }
-.footerLeft {
-  display: flex;
-  justify-content: center;
-  align-items: first baseline;
-  gap: 40px;
-  padding: 30px;
+footer ul {
+  list-style: none;
+}
+footer h3 {
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-/* .vertBorder {
-  border-left: 2px solid white;
-  height: 200px;
-  margin: auto;
-} */
-.footerRight {
-  height: auto;
-}
-.socialMedia {
-  margin-top: 27px;
-}
-.socialMedia ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 footer i {
   color: white;
+}
+
+.socialMedia ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 1.3rem;
+}
+
+.siteInfos h4 {
+  margin-top: 10px;
+}
+/*footer social medias icons*/
+.fa {
+  padding: 20px;
+  text-align: center;
+  margin: 5px 2px;
+  font-size: 30px;
+  width: 50px;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa:hover {
+  opacity: 0.9;
 }
 
 /* #dcc8ff violet stylé pour (petite) bannière
@@ -396,6 +410,7 @@ sable clair #fff7e1 */
   .advantages div {
     width: calc(100% - 20px);
   }
+
   /* .active #icons:before {
     content: "\2715";
   }

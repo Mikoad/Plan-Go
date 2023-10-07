@@ -1,5 +1,5 @@
 <div class="modalContainer">
-    <h1>Se connecter</h1>
+    <h2>Se connecter</h2>
     <div class="formConnexion">
         <form action="connexion" method="POST">
             <label for="email">Adresse mail</label>
@@ -26,7 +26,7 @@
             <div class="connexion">
                 <button class="btnLogin">Connexion</button>
                 <p>Vous n'avez pas encore de compte ?</p>
-                <button class="btnAccount">Créer un compte</button>
+                <button class="btnAccount" onclick="window.location.href='inscription'">Créer un compte</button>
             </div>
         </form>
     </div>

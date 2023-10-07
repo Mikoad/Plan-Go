@@ -9,7 +9,7 @@
     <p>Vous pouvez <a href="connexion">vous connecter</a> dès maintenant.</p>
 <?php } else { ?>
 
-    <h1>Inscription</h1>
+    <h2>Inscription</h2>
 
     <form id="registerForm" action="inscription" method="post">
 

@@ -52,6 +52,7 @@ class users
 
     //get user infos
     // voir pour avoir l'email et le mdp dans les infos
+    //voir pour remplacer getInfos par getOneById dans loginController
     public function getInfos()
     {
         $query = 'SELECT `id`, `username`, `id_usersRoles` FROM `u7dat_users` WHERE `email` = :email';
@@ -91,6 +92,9 @@ class users
     //delete user account
     public function deleteAccount()
     {
-        $query = '';
+        $query = 'DELETE FROM `u7dat_users` WHERE `id` = :id';
+        $request = $this->db->prepare($query);
+        $request->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $request->execute();
     }
 }

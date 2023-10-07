@@ -1,54 +1,56 @@
 <footer>
-  <section class="footer">
-    <div class="footerLeft">
-      <div class="plan">
-        <h4>Plan du site</h4>
-        <ul>
-          <li><a href="accueil">Accueil</a></li>
-          <li><a href="recherche">Recherche</a></li>
-          <li><a href="groupe">Groupe</a></li>
-          <li><a href="profil">Profil</a></li>
-          <li><a href="connexion">Se connecter</a></li>
-          <li><a href="inscription">S'inscrire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>
-            Adresse : 16 rue Ferdinand Bac, <br />
-            60200 Compiègne
-          </li>
-          <li>Mail : plan&go@gmail.com</li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+  <div class="aboutUs">
+    <h3>A propos de nous</h3>
+    <h4>Adresse</h4>
+    <div class="addressFooter">
+      <i></i>
+      <p>
+        8 rue Ferdinand Bac,<br />
+        60200 Compiègne
+      </p>
     </div>
-
-    <div class="footerRight">
-      <div class="socialMedia">
-        <h4>Réseaux sociaux</h4>
-        <ul>
-          <li>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-          </li>
-        </ul>
-      </div>
+    <h4>Contact</h4>
+    <div class="contactFooter">
+      <i></i>
+      <p>Tél : 0651440453</p>
+      <p>Mail : plan&go@gmail.com</p>
     </div>
-  </section>
-  <!-- <div>
-            <a href="">Retour en haut</a>
-        </div> -->
+  </div>
+  <div class="sitePlan">
+    <h3>Plan du site</h3>
+    <ul>
+      <li><a href="../../accueil">Accueil</a></li>
+      <li><a href="../recherche">Recherche</a></li>
+      <li><a href="../profil">Profil</a></li>
+      <li><a href="../connexion">Connexion</a></li>
+      <li><a href="../inscription">Inscription</a></li>
+    </ul>
+  </div>
+  <div class="siteInfos">
+    <h3>Infos pratiques</h3>
+    <ul>
+      <li>Mentions Légales</li>
+      <li>CGV</li>
+      <li>Politique de confidentialité</li>
+    </ul>
+    <h4>Réseaux sociaux</h4>
+    <div class="socialMedia">
+      <ul>
+        <li>
+          <a href="" class="fa fa-facebook">a</a>
+        </li>
+        <li>
+          <a href="" class="fa fa-instagram">a</a>
+        </li>
+        <li>
+          <a href="" class="fa fa-linkedin">a</a>
+        </li>
+        <li>
+          <a href="" class="fa fa-twitter">a</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </footer>
 <script src="assets/js/script.js"></script>
 
