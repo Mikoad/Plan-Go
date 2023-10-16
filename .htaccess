@@ -1,5 +1,6 @@
 RewriteEngine On
 RewriteRule ^accueil$ controllers/indexController.php
+RewriteRule ^recherche-([0-9]+)$ controllers/searchController.php?id=$1
 RewriteRule ^recherche$ controllers/searchController.php
 
 RewriteRule ^profil$ controllers/profileController.php
@@ -8,5 +9,6 @@ RewriteRule ^inscription$ controllers/registerController.php
 RewriteRule ^connexion$ controllers/loginController.php
 RewriteRule ^deconnexion$ controllers/logoutController.php
 RewriteRule ^ajouter-réservations$ controllers/addReservationController.php
-RewriteRule ^modifier-réservations$ controllers/updateReservationController.php
+RewriteRule ^modifier-réservation-([0-9]+)$ controllers/updateReservationController.php?id=$1
 RewriteRule ^reservation-([0-9]+)$ controllers/reservationController.php?id=$1
+RewriteRule ^reservations$ controllers/adminReservationListController.php

@@ -39,7 +39,7 @@
   height: auto;
   padding: 20px;
   margin: auto;
-  width: 80%;
+  width: 90%;
 }
 
 select {
@@ -50,13 +50,15 @@ select {
   background-color: transparent;
   width: 20%;
 }
+
 .allSelect input[type="submit"] {
   border: none;
   border-radius: 20px;
   width: 80px;
   padding: 8px;
-  background-color: darkgreen;
-  color: white;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }
 .allSelect option {
   background-color: rgb(243, 216, 168);
@@ -83,11 +85,10 @@ ul li {
   text-align: start;
 }
 .bannerSuggestion {
-  background-color: rgba(236, 236, 236, 0.511);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   padding: 20px;
   overflow: hidden;
@@ -98,7 +99,7 @@ ul li {
 
   align-items: center;
   padding: 10px 10px 20px 10px;
-  box-shadow: 0px 0px 5px 1px #0000007d;
+  box-shadow: 0px 0px 5px 1px rgba(5, 5, 5, 0.318);
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   overflow: hidden;
@@ -107,26 +108,32 @@ ul li {
   height: 290px;
   position: relative;
 }
+
 .cardSuggest a {
   border: none;
   text-decoration: none;
-  background: rgb(10, 10, 10);
+  background: rgb(8, 73, 238);
   color: white;
   font-weight: bold;
   font-size: 0.8rem;
-  border-radius: 20px;
-  padding: 10px;
+
+  padding: 7px;
   margin: 10px;
   transition: 0.2s ease-in-out;
 }
 
 .cardSuggest a:hover {
-  transform: scale(1.05);
+  background-color: white;
+  color: rgb(8, 73, 238);
+  border: 2px solid rgb(8, 73, 238);
 }
 .cardSuggest img {
   height: 140px;
   width: 250px;
   margin-top: -10px;
+}
+.cardSuggest h3 {
+  font-size: 1.1rem;
 }
 .cardSuggest p {
   font-size: 0.8rem;
@@ -169,20 +176,22 @@ ul li {
 
 /*reservation details style*/
 .reservationDetails {
-  margin: 50px 10px;
+  margin: 65px 0;
 }
 
 .reservation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  position: relative;
+  padding: 5px;
+  background: rgba(0, 132, 255, 0.293);
 }
+
 .imgReservation {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
 }
 .reservation h2 {
   margin-bottom: 20px;
@@ -190,21 +199,47 @@ ul li {
 .imgReservation img {
   height: 250px;
 }
-
-.description h3 {
-  margin: -10px;
+.description {
+  margin-top: 100px;
 }
+
 .description p {
   padding: 5px;
   margin: 10px auto;
+
   width: 50vw;
-  text-align: center;
+  text-align: justify;
 }
 .description span {
   font-weight: bold;
   font-size: 1.1rem;
 }
-
+.title-add {
+  display: flex;
+  justify-content: space-around;
+}
+.title-add h2 {
+  margin-top: 10px;
+}
+.title-add #addToPlanning {
+  padding: 10px 17px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+/*responsive reservation details*/
+@media screen and (max-width: 900px) {
+  .description {
+    margin-top: 0;
+    width: 100%;
+  }
+  .description p {
+    width: 90%;
+    padding: 0 20px;
+  }
+  .imgReservation img {
+    height: 180px;
+  }
+}
 /*form update - delete reservation style*/
 .updateRes {
   display: flex;
@@ -251,4 +286,7 @@ ul li {
 }
 .deleteForm input[type="submit"] {
   background: rgb(189, 12, 12);
+}
+.updateForm {
+  display: flex;
 }

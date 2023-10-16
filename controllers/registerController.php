@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (isset($_GET['id_groups'])) {
-    $_SESSION['id_groups_add'] = $_GET['id_groups'];
-    var_dump($_SESSION);
-}
+// if (isset($_GET['id_groups'])) {
+//     $_SESSION['id_groups_add'] = $_GET['id_groups'];
+//     var_dump($_SESSION);
+// }
 require_once '../models/usersModel.php';
 
 

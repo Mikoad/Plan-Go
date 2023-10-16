@@ -31,6 +31,8 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+
+  margin: 15px;
 }
 .accountBtn button {
   background: rgb(217, 0, 0);
@@ -56,12 +58,15 @@
 .modal-content p {
   text-align: center;
   padding-top: 20px;
+  font-size: 1.3rem;
 }
-.modal input[type="submit"] {
+#deleteConfirm {
   padding: 10px;
   background: rgb(217, 0, 0);
   border-radius: 30px;
+  cursor: pointer;
 }
+
 .profil form {
   display: flex;
   flex-direction: column;
@@ -79,7 +84,8 @@
 }
 
 .updateUser {
-  display: flex;
+  display: none;
+
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -88,9 +94,6 @@
   width: 300px;
   margin: auto;
 }
-/* .updateUser form {
-  display: none;
-} */
 
 /*planning part*/
 
@@ -107,15 +110,12 @@
   width: 90%;
   margin: auto;
 }
-table {
-  background: rgba(255, 68, 0, 0.803);
-  color: white;
-}
+
 table,
 tr,
 th,
 td {
-  border: 1px solid white;
+  border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
   padding: 5px;

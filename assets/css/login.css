@@ -10,16 +10,19 @@ h1 {
 }
 .formConnexion {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-.modalContainer {
+.loginRegisterContainer {
   background-color: white;
   border-radius: 20px;
   margin: 50px auto;
-  padding: 30px 10px;
-  width: 50%;
+  padding: 10px 10px;
+  width: 60vw;
   height: auto;
+}
+.formConnexion form {
+  width: 70%;
 }
 
 .email input,
@@ -43,11 +46,16 @@ h1 {
 .connexion {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 20px;
+  padding: 20px 0;
+  gap: 15px;
 }
+.connexion p {
+  width: auto;
+  margin: auto;
+}
+.connexion input[type="submit"],
 .connexion button {
-  width: 70%;
+  width: 150px;
   padding: 10px;
   margin: auto;
   border-radius: 20px;
@@ -55,8 +63,10 @@ h1 {
   cursor: pointer;
   transition: 0.2s;
 }
-.connexion button:hover {
-  transform: scale(1.1);
+
+.connexion button:hover,
+.connexion input[type="submit"]:hover {
+  transform: scale(1.05);
 }
 .btnLogin {
   background-color: #226a54;
@@ -85,26 +95,8 @@ h1 {
 .forgotPassword a {
   color: black;
 }
-
-/*page inscription*/
-#registerForm {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-}
-
-#registerForm input:not([type="submit"]) {
-  border: none;
-  border-bottom: 1px solid #000;
-  margin: 10px 0 10px 0;
-}
-
-#registerForm input[type="submit"] {
-  padding: 5px;
-  width: 50%;
-  margin: auto;
-  margin-top: 10px;
+@media screen and (max-width: 600px) {
+  .loginRegisterContainer {
+    width: 100%;
+  }
 }

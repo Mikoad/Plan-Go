@@ -1,4 +1,4 @@
-<div class="modalContainer">
+<div class="loginRegisterContainer">
     <h2>Se connecter</h2>
     <div class="formConnexion">
         <form action="connexion" method="POST">
@@ -24,7 +24,7 @@
 
 
             <div class="connexion">
-                <button class="btnLogin">Connexion</button>
+                <input class="btnLogin" type="submit" value="Se connecter">
                 <p>Vous n'avez pas encore de compte ?</p>
                 <button class="btnAccount" onclick="window.location.href='inscription'">Créer un compte</button>
             </div>

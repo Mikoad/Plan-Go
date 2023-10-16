@@ -13,6 +13,10 @@
   font-family: "Alfa Slab One", cursive;
 }
 
+h1 {
+  padding: 20px;
+  font-size: 2rem;
+}
 h2,
 main h3 {
   font-weight: bold;
@@ -44,6 +48,9 @@ footer a {
 }
 
 /*buttons*/
+button {
+  cursor: pointer;
+}
 .btn {
   padding: 13px;
   width: 145px;
@@ -159,6 +166,9 @@ header {
   transform: translate(-50%, -50%);
   font-size: 1.2rem;
   color: white;
+}
+.headerContent h1 {
+  font-size: 2.5rem;
 }
 span {
   font-weight: bold;
@@ -295,11 +305,7 @@ span {
   transform: scale(1.05);
   filter: brightness(110%);
 }
-.activityTitle {
-  padding-left: 70px;
-  font-size: 1.5rem;
-  margin-top: 60px;
-}
+
 main h4 {
   padding: 10px;
 }
@@ -338,7 +344,8 @@ main h4 {
 
 footer {
   display: flex;
-  justify-content: space-around;
+
+  justify-content: space-evenly;
   color: white;
   background: black;
   padding: 20px;
@@ -356,11 +363,10 @@ footer i {
   color: white;
 }
 
-.socialMedia ul {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  font-size: 1.3rem;
+.siteInfos ul li:hover,
+.sitePlan ul li:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .siteInfos h4 {
@@ -409,6 +415,43 @@ sable clair #fff7e1 */
   }
   .advantages div {
     width: calc(100% - 20px);
+  }
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+  }
+  @media screen and (max-width: 560px) {
+    nav ul {
+      display: none;
+    }
+    #icons {
+      display: block;
+      padding: 10px;
+    }
+    #icons:before {
+      content: "\2630";
+    }
+    .bannerContent {
+      width: 75vw;
+    }
+    footer ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    footer h3,
+    footer h4 {
+      text-align: center;
+    }
+    .sitePlan {
+      margin: 20px 0;
+    }
+    .aboutUs {
+      display: none;
+    }
   }
 
   /* .active #icons:before {

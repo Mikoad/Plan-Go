@@ -53,20 +53,20 @@ if (carousel != null) {
 
 
 //display update forms
-let updateBtn = document.getElementById("update");
-if (updateBtn != null) {
+let updateBtn = document.getElementById("updateBtn");
 
-    let updateUser = document.querySelector(".updateUser");
-    updateBtn.addEventListener("click", () => {
-        // if (updateUser.style.display === "none") {
-        //     updateUser.style.display = "block";
-        // } else {
-        //     updateUser.style.display = "none";
-        // }
-        alert("ok");
 
-    })
-}
+let updateUser = document.querySelector(".updateUser");
+updateBtn.addEventListener("click", () => {
+    if (updateUser.style.display === "none") {
+        updateUser.style.display = "flex";
+    } else {
+        updateUser.style.display = "none";
+    }
+
+
+})
+
 
 //modal delete account
 const openModalBtn = document.getElementById("open-modal-btn");

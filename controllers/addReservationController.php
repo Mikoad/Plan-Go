@@ -6,8 +6,9 @@ require_once '../models/citiesModel.php';
 
 // faire les checkIfexists dans les models de id_cities et id_reservationsSubTypes pour vérifier si la catégorie/la ville existe bien
 $regex = [
-    'name' => '/^[A-Za-z0-9\sàèéôç]{1,50}$/u',
+    'name' => '/^[A-Za-z0-9\sàèéôç\']{1,50}$/u',
     'price' => '/^\d+(\.|\,)?\d{0,2}$/',
+
 ];
 
 $formErrors = [];

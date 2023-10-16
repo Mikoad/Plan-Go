@@ -16,7 +16,8 @@ $regex = [
 
 $formErrors = [];
 $userUpdate = new users;
-//update user infos
+
+//update user infos form
 if (isset($_POST['updateInfos'])) {
 
     if (!empty($_POST['username'])) {
@@ -61,7 +62,7 @@ if (isset($_POST['updateInfos'])) {
     }
 }
 
-
+//update user password form
 if (isset($_POST['updatePassword'])) {
     if (!empty($_POST['currentPassword'])) {
         $userUpdate->email = $_SESSION['user']['email'];

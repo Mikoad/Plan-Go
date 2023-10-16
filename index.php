@@ -11,7 +11,7 @@
                     <span>organisez</span>-vous au même endroit.
                 </p>
                 <!-- au clic, renvoi sur la page de recherche -->
-                <button class="btn" onclick="window.location.href='recherche'">Réservez</button>
+                <a href="recherche"><button class="btn">Réservez</button></a>
             </div>
         </div>
         <div class="contentContainer">
@@ -67,27 +67,40 @@
         <div class="banner">
             <img src="assets/img/banner-hotel.jpg" alt="">
             <div class="bannerContent">
-                <h3>Les meilleurs logements au meilleur prix</h3>
-                <p>Besoin d'une chambre d'hôtel, d'un camping ou même d'un gîte ? Réservez le logement qui vous convient dès maintenant.</p>
-                <a href="recherche"><button class=" btn whiteBtn">Voir la liste</button></a>
+                <h3>Les meilleurs hôtels au meilleur prix</h3>
+                <p>Besoin d'une chambre d'hôtel ? Réservez l'hôtel qui vous convient dès maintenant.</p>
+                <form action="recherche-4" method="POST">
+                    <input type="hidden" name="category" value="4">
+                    <button class=" btn whiteBtn">Voir la liste</button>
+                </form>
             </div>
         </div>
         <h3 class="activityTitle">Retrouvez toutes les catégories d'activités</h3>
         <div class="activityCategories">
             <div>
-                <img src="assets/img/top-activity.jpg" alt="">
-                <h4>Les mieux notées</h4>
-            </div>
-            <div>
-                <img src="assets/img/activity-extrem.jpg" alt="Activités - Sensations fortes">
+                <form action="recherche-3" method="POST">
+                    <input type="hidden" name="category" value="3">
+                    <button><img src="assets/img/activity-extrem.jpg" alt="Activités - Sensations fortes"></button>
+                </form>
+
                 <h4>Sensations fortes</h4>
             </div>
             <div>
-                <img src="assets/img/activity-outside.jpg" alt="">
+                <form action="recherche-1" method="POST">
+                    <input type="hidden" name="category" value="1">
+                    <button><img src="assets/img/activity-outside.jpg" alt="">
+                    </button>
+                </form>
+
                 <h4>De plein air</h4>
             </div>
             <div>
-                <img src="assets/img/activity-visit.jpg" alt="">
+                <form action="recherche-2" method="POST">
+                    <input type="hidden" name="category" value="2">
+                    <button><img src="assets/img/activity-visit.jpg" alt="">
+                    </button>
+                </form>
+
                 <h4>Sorties culturelles</h4>
             </div>
         </div>
@@ -96,15 +109,33 @@
         <h3>Profitez d'un moment de détente</h3>
         <div class="lbContent">
             <div>
-                <img src="assets/img/spa.jpg" alt="Image de Spa" />
+                <form action="recherche-7" method="POST">
+                    <input type="hidden" name="category" value="7">
+                    <button>
+                        <img src="assets/img/spa.jpg" alt="Image de Spa" />
+                    </button>
+                </form>
+
                 <h4>Spa</h4>
             </div>
             <div>
-                <img src="assets/img/retraite.jpg" alt="Image de Retraites Santé" />
+                <form action="recherche-9" method="POST">
+                    <input type="hidden" name="category" value="9">
+                    <button>
+                        <img src="assets/img/retraite.jpg" alt="Image de Retraites Santé" />
+                    </button>
+                </form>
+
                 <h4>Retraites</h4>
             </div>
             <div>
-                <img src="assets/img/cure.jpg" alt="Image de Cure" />
+                <form action="recherche-8" method="POST">
+                    <input type="hidden" name="category" value="8">
+                    <button>
+                        <img src="assets/img/cure.jpg" alt="Image de Cure" />
+                    </button>
+                </form>
+
                 <h4>Cures</h4>
             </div>
         </div>

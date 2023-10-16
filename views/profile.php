@@ -17,7 +17,7 @@
                 <button id="updateBtn">Modifier mon profil</button>
                 <button id="open-modal-btn">Supprimer mon compte</button>
             </div>
-            <p>Voir pour js display none de base les form update et au clic display block</p>
+            <!-- <p>Voir pour js display none de base les form update et au clic display block</p> -->
 
 
         </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="modal-footer">
                     <form action="profil" method="POST">
-                        <input type="submit" value="Supprimer" name="delete">
+                        <input type="submit" value="Supprimer" name="delete" id="deleteConfirm">
                     </form>
                 </div>
             </div>

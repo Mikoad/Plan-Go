@@ -13,10 +13,12 @@ $regex = [
 
 $formErrors = [];
 $reservation = new reservations;
-$reservationList = $reservation->getList();
-$reservationsSubTypes = new reservationsSubTypes;
+$reservation->id = $_GET['id'];
+$reservationInfos = $reservation->getOneById();
 
+$reservationsSubTypes = new reservationsSubTypes;
 $subTypeList = $reservationsSubTypes->getList();
+
 $cities = new cities;
 $citiesList = $cities->getList();
 
@@ -25,7 +27,7 @@ if (isset($_POST['update'])) {
     //reservation object instance
     $updateReservation = new reservations;
 
-    //form checks
+    //form reservation checks
     if (!empty($_POST['name'])) {
         if (preg_match($regex['name'], $_POST['name'])) {
             $updateReservation->name = strip_tags($_POST['name']);
@@ -52,7 +54,47 @@ if (isset($_POST['update'])) {
         $formErrors['description'] = 'La description de la réservation est obligatoire';
     }
 
+    if (!empty($_POST['id_reservationsSubTypes'])) {
+        $updateReservation->id_reservationsSubTypes = strip_tags($_POST['id_reservationsSubTypes']);
+    } else {
+        $formErrors['id_reservationsSubTypes'] = 'La sous-catégorie de la réservation est obligatoire';
+    }
 
+    if (!empty($_POST['id_cities'])) {
+        $updateReservation->id_cities = strip_tags($_POST['id_cities']);
+    } else {
+        $formErrors['id_cities'] = 'La ville de la réservation est obligatoire';
+    }
+
+    if (isset($_POST['update'])) {
+        if (isset($_POST['reservation_id'])) {
+            $updateReservation->id = strip_tags($_POST['reservation_id']);
+        }
+    }
+
+
+
+
+
+    //if no error => update reservation
+    if (count($formErrors) == 0) {
+        if (move_uploaded_file($_FILES['image']['tmp_name'], '../' . $updateReservation->image)) {
+            // ... et si l'article n'arrive pas à se créer ...
+            if ($updateReservation->update()) {
+                $success = 'L\'article a été modifié avec succès';
+            } else {
+                $formErrors['general'] = 'L\'article n\'a pas pu être modifié. Veuillez réessayer plus tard.';
+                // ... je supprime l'image.
+                unlink('../' . $updateReservation->image);
+            }
+        } else {
+            $formErrors['image'] = 'L\'image n\'a pas pu être envoyée.';
+        }
+    }
+}
+
+// image update reservation
+if (isset($_POST['updateImg'])) {
     if ($_FILES['image']['error'] != 4) {
         if ($_FILES['image']['size'] < 1000000) {
             //Au final, si je n'ai pas d'autres erreurs...
@@ -84,58 +126,15 @@ if (isset($_POST['update'])) {
     } else {
         $formErrors['image'] = 'L\'image est obligatoire.';
     }
-
-
-
-
-    if (!empty($_POST['id_reservationsSubTypes'])) {
-        $updateReservation->id_reservationsSubTypes = strip_tags($_POST['id_reservationsSubTypes']);
-    } else {
-        $formErrors['id_reservationsSubTypes'] = 'La sous-catégorie de la réservation est obligatoire';
-    }
-
-    if (!empty($_POST['id_cities'])) {
-        $updateReservation->id_cities = strip_tags($_POST['id_cities']);
-    } else {
-        $formErrors['id_cities'] = 'La ville de la réservation est obligatoire';
-    }
-
-    if (isset($_POST['update'])) {
-        if (isset($_POST['reservation_id'])) {
-            $updateReservation->id = strip_tags($_POST['reservation_id']);
-        }
-    }
-
-
-
-
-
-    //reservation publication check
-    if (count($formErrors) == 0) {
-        if (move_uploaded_file($_FILES['image']['tmp_name'], '../' . $updateReservation->image)) {
-            // ... et si l'article n'arrive pas à se créer ...
-            if ($updateReservation->update()) {
-                $success = 'L\'article a été modifié avec succès';
-            } else {
-                $formErrors['general'] = 'L\'article n\'a pas pu être modifié. Veuillez réessayer plus tard.';
-                // ... je supprime l'image.
-                unlink('../' . $updateReservation->image);
-            }
-        } else {
-            $formErrors['image'] = 'L\'image n\'a pas pu être envoyée.';
-        }
-    }
 }
 
+//delete reservation checks
 if (isset($_POST['delete'])) {
-    if (isset($_POST['reservationDelete'])) {
-        $reservation = new reservations;
-        //strip_tags pas obligatoire 
-        $reservation->id = strip_tags($_POST['reservationDelete']);
-        $reservation->delete();
-    } else {
-        $formErrors['reservationDelete'] = 'Veuillez choisir une réservation à supprimer.';
-    }
+
+    $reservation = new reservations;
+    $reservation->delete();
+    header('Location: /reservations');
+    exit;
 }
 
 

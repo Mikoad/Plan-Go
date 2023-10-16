@@ -6,7 +6,8 @@ if (isset($_GET['id'])) {
     $reservationId = intval($_GET['id']);
 }
 $reservation = new reservations;
-$reservationById = $reservation->getOneById($reservationId);
+$reservation->id = $reservationId;
+$reservationById = $reservation->getOneById();
 
 require_once '../views/parts/header.php';
 require_once '../views/reservation.php';

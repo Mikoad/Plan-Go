@@ -12,35 +12,29 @@
         <!-- OU ALORS, mettre des checkbox avec categ reservations cote à cote, checkbox correspondantes en dessous, le user peut n'en CHOISIR QU'UN puis submit -->
         <div class="allSelect">
             <form action="recherche" method="POST">
-                <select id="">
-                    <option value="" selected disabled>Activités</option>
-                    <option value="">De plein air</option>
-                    <option value="">Culturelles</option>
-                    <option value="">Sensations fortes</option>
+                <select id="category" name='category'>
+                    <option value="" selected disabled>Catégories</option>
+                    <?php foreach ($typesList as $key => $type) { ?>
+                        <optgroup label="<?= $type['name'] ?>">
+
+                            <?php foreach ($type['subTypes'] as $key => $subType) { ?>
+                                <option value="<?= $key ?>"><?= $subType ?></option>
+                            <?php } ?>
+                        </optgroup>
+                    <?php } ?>
                 </select>
-                <select id="">
-                    <option value="" selected disabled>Logements</option>
-                    <option value="">Hôtels</option>
-                    <option value="">Camping</option>
-                    <option value="">Gîtes</option>
-                </select>
-                <select id="">
-                    <option value="" selected disabled>Bien-être</option>
-                    <option value="">Spa</option>
-                    <option value="">Cures</option>
-                    <option value="">Retraites</option>
-                </select>
-                <select id="">
+
+
+                <select id="price" name="price">
                     <option value="" selected disabled>Prix</option>
-                    <option value="">Croissant</option>
-                    <option value="">Décroissant</option>
+                    <option value="ASC">Croissant</option>
+                    <option value="DESC">Décroissant</option>
                 </select>
                 <input type="submit" value="Afficher">
             </form>
-
-
-
         </div>
+
+
     </section>
 
     <!-- insérer les réservations via $reservation->getList() -->
@@ -51,7 +45,7 @@
                 <div class="cardSuggest">
                     <img src="../<?= $rl->image ?>" alt="<?= $rl->name ?>">
                     <h3><?= $rl->name ?></h3>
-                    <p><?= $rl->description ?></p>
+                    <p><?= $rl->description ?>...</p>
                     <p><?= $rl->price ?>€</p>
                     <a href="reservation-<?= $rl->id ?>">Voir plus</a>
                     <!-- au clic sur ce bouton, la réservation s'ajoute au planning (table usersreservations) -->

@@ -46,6 +46,6 @@
             <input type="submit" value="Ajouter" name="add">
         </form>
 
-        <a href="modifier-réservations">Options réservations</a>
+        <a href="reservations">Options réservations</a>
     </section>
 </main>
