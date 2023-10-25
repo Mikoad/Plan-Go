@@ -38,23 +38,23 @@ class reservations
     //get reservations list method
     public function getList()
     {
-        $query = 'SELECT `u7dat_reservations`.`id`, `u7dat_reservations`.`name`, `price`, SUBSTR(`description`, 1, 50) AS `description`,`image` 
+        $query = 'SELECT `u7dat_reservations`.`id`, `u7dat_reservations`.`name`, `price`, SUBSTR(`description`, 1, 50) AS `description`,`image`, `city`.`name` AS `cityName`
         FROM `u7dat_reservations` 
         INNER JOIN `u7dat_reservationsSubTypes` AS `rst`
         ON `id_reservationsSubTypes` = `rst`.`id`
-        INNER JOIN `u7dat_cities` AS `city` 
-        ON `id_cities` = `city`.`id`;';
+        INNER JOIN `u7dat_cities` AS `city`
+        ON `id_cities` = `city`.`id`';
         $request = $this->db->query($query);
         return $request->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function search($search)
     {
-        $query = 'SELECT `r`.`id`, `r`.`name`, `price`, SUBSTR(`description`, 1, 40) AS `description`, `image`, `id_reservationsSubTypes`, `id_cities` 
+        $query = 'SELECT `r`.`id`, `r`.`name`, `price`, SUBSTR(`description`, 1, 40) AS `description`, `image`, `id_reservationsSubTypes`, `id_cities`
         FROM `u7dat_reservations` AS `r` 
         INNER JOIN `u7dat_reservationsSubTypes` AS `rst` ON `id_reservationsSubTypes` = `rst`.`id` 
         INNER JOIN `u7dat_cities` AS `city` ON `id_cities` = `city`.`id` 
-        WHERE `r`.`name` LIKE :search OR `r`.`description` LIKE :search;';
+        WHERE `r`.`name` LIKE :search OR `r`.`description` LIKE :search';
         $request = $this->db->prepare($query);
         $request->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
         $request->execute();
@@ -106,7 +106,12 @@ class reservations
     //update image reservation method 
     public function updateImage()
     {
-        $query = '';
+        $query = 'UPDATE `u7dat_reservations` SET `image`= :image
+        WHERE `id` = :id';
+        $request = $this->db->prepare($query);
+        $request->bindValue("image", $this->image, PDO::PARAM_STR);
+        $request->bindValue("id", $this->id, PDO::PARAM_INT);
+        return $request->execute();
     }
     public function delete()
     {

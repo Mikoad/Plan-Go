@@ -138,8 +138,13 @@ ul li {
 .cardSuggest p {
   font-size: 0.8rem;
 }
-.cardSuggest :nth-child(4) {
+.price-city :nth-child(2) {
   font-weight: bold;
+}
+.price-city {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
 }
 #addToPlanning {
@@ -167,7 +172,12 @@ ul li {
 #addToPlanning:hover i {
   color: white;
 }
-
+.fa-check {
+  display: none;
+}
+.fa-plus {
+  display: block;
+}
 @media screen and (max-width: 700px) {
   .labelSearch {
     display: none;

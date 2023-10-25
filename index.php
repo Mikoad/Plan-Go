@@ -17,8 +17,8 @@
         <div class="contentContainer">
             <h2>Comment ça marche ?</h2>
             <div class="content">
-                <h3 class="title">Présentation</h3>
-                <p class="paragraph">Plan&Go vous permet d'organiser vos vacances de manière simple et rapide. Faîtes toutes vos réservations d'activités, de logements et de séances bien être au même endroit.</p>
+                <h3 class="title">Fonctionnement du site</h3>
+                <p class="paragraph">Découvrez la marche à suivre pour pouvoir utiliser Plan&Go comme vous le voulez, vous n'avez plus qu'à faire défiler les instructions avec le bouton ci-dessous !</p>
             </div>
             <div>
                 <button id="carousel">Suivant <i class="fa-solid fa-chevron-right"></i></button>
@@ -48,12 +48,12 @@
         </div>
         <div class="advantages secondRow">
             <div>
-                <img src="assets/img/advantage-chrono.jpg" alt="Service rapide">
+                <img src="assets/img/calendrier.png" alt="Imaage de calendrier">
                 <h3>Gérez votre planning</h3>
                 <p>Quand des réservations vous plaisent, ajoutez les directement dans votre planning en un clic et retrouvez les sur votre profil.</p>
             </div>
             <div>
-                <img src="assets/img/search.png" alt="">
+                <img src="assets/img/service-tout-en-un.png" alt="Image serrage de main">
                 <h3>Service tout-en-un</h3>
                 <p>Recherchez ce qui vous plaît, faîtes vos réservations et organisez-vous au même endroit. Plus de mails éparpillés dans votre boîte mail, Plan&Go vous accompagne de A à Z.</p>
             </div>

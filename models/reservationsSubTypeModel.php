@@ -31,7 +31,7 @@ class reservationsSubTypes
         $request->execute();
         return $request->fetchAll(PDO::FETCH_OBJ);
     }
-    //voir ou la mettre dans le controller
+
     public function checkIfExists()
     {
         $query = 'SELECT COUNT(*) FROM `u7dat_reservationssubtypes` WHERE `id` = :id';

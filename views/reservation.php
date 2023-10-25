@@ -5,8 +5,8 @@
         <div class="reservation">
             <div class="imgReservation">
                 <div class="title-add">
-                    <h2><?= $reservationById->name ?></h2>
-                    <button id="addToPlanning"><i class="fa-solid fa-plus"></i></button>
+                    <h1><?= $reservationById->name ?></h1>
+                    <!-- <button id="addToPlanning"><i class="fa-solid fa-plus"></i></button> -->
                 </div>
 
                 <img src="<?= $reservationById->image ?>" alt="<?= $reservationById->name ?>">

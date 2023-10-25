@@ -1,7 +1,12 @@
 <main>
     <section class="profil">
+        <!-- lien de déconnexion -->
+        <div class="logout">
+            <a href="/deconnexion">Déconnexion</a>
+        </div>
         <h1>Mon Profil</h1>
         <p class="welcomeMessage"><?= 'Bonjour ' . $_SESSION['user']['username']; ?> ! Bienvenue sur votre profil. Ici vous retrouverez toutes vos informations et vos planning ! </p>
+        <!-- affichage des erreurs s'il y en a -->
         <?php if (isset($success['password'])) { ?>
             <p class="success"><?= $success['password'] ?></p>
         <?php } ?>
@@ -83,31 +88,36 @@
 
             </form>
         </div>
-        <!-- <div class="deleteAccount">
 
-        </div> -->
         <div class="planning">
             <h2>Planning</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Titre de la réservation</th>
+                        <th>Titre</th>
+                        <th>Description</th>
                         <th>Prix</th>
                         <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01/02/03</td>
-                        <td>Exemple de titre</td>
-                        <td>00.00€</td>
-                        <td class="actions">
-                            <a href="" class="button action" target="_blank"><i class="fa fa-eye"></i></a>
+                    <!-- boucle foreach pour générer une ligne de tableau contenant plusieurs données dans diférentes colonnes à chaque réservations de l'utilisateur -->
+                    <?php foreach ($urList as $ur) { ?>
+                        <tr>
+                            <td><?= $ur->name ?></td>
+                            <td><?= $ur->description ?>...</td>
+                            <td><?= $ur->price ?>€</td>
+                            <td class="actions">
+                                <a href="reservation-<?= $ur->id_reservations ?>"><i class="fa fa-eye"></i></a>
 
-                            <a href="" class="button action"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
+                                <form action="profil" method="POST">
+                                    <button type="submit " name="deleteReservation"><i class="fa-solid fa-trash"></i></button>
+
+                                </form>
+
+                            </td>
+                        </tr>
+                    <?php } ?>
 
                 </tbody>
                 <tfoot>
@@ -116,13 +126,13 @@
                     </tr>
                 </tfoot>
             </table>
-            <!-- faire une div ou tableau avec a droite la date de réservation au milieu le titre et la description et à gauche le prix puis organiser par ordre de date  -->
+            <form action="profil" method="POST">
+                <button name="delete">Réinitialiser mon planning</button>
+            </form>
+
         </div>
 
 
-        <div class="logout">
-            <a href="/deconnexion">Déconnexion</a>
-        </div>
 
     </section>
 </main>

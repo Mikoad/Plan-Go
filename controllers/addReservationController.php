@@ -4,9 +4,9 @@ require_once '../models/reservationsModel.php';
 require_once '../models/reservationsSubTypeModel.php';
 require_once '../models/citiesModel.php';
 
-// faire les checkIfexists dans les models de id_cities et id_reservationsSubTypes pour vérifier si la catégorie/la ville existe bien
+
 $regex = [
-    'name' => '/^[A-Za-z0-9\sàèéôç\']{1,50}$/u',
+    'name' => '/^[A-Za-z\sàèéôç\']{1,50}$/u',
     'price' => '/^\d+(\.|\,)?\d{0,2}$/',
 
 ];
@@ -30,7 +30,7 @@ if (count($_POST) > 0) {
         if (preg_match($regex['name'], $_POST['name'])) {
             $reservation->name = strip_tags($_POST['name']);
         } else {
-            $formErrors['name'] = 'Le nom de la réservation doit contenir 50 caractères maximum. Les caractères spéciaux sont interdits.';
+            $formErrors['name'] = 'Le nom de la réservation doit contenir 50 caractères maximum. Les caractères spéciaux et les chiffres sont interdits.';
         }
     } else {
         $formErrors['name'] = 'Le nom de la réservation est obligatoire.';
@@ -52,11 +52,13 @@ if (count($_POST) > 0) {
         $formErrors['description'] = 'La description de la réservation est obligatoire';
     }
 
-
+    //si le fichier est bien téléchargé
     if ($_FILES['image']['error'] != 4) {
+        //si la taille du ficher est inférieure à 1mo
         if ($_FILES['image']['size'] < 1000000) {
-            //Au final, si je n'ai pas d'autres erreurs...
+            //Si le fichier a été téléchargé avec succès
             if ($_FILES['image']['error'] == 0) {
+                //j'extrait l'extension du fichier avec pathinfo dans $extension
                 $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                 $authorizedExtension = [
                     'jpg' => 'image/jpeg',
@@ -105,7 +107,7 @@ if (count($_POST) > 0) {
         if (move_uploaded_file($_FILES['image']['tmp_name'], '../' . $reservation->image)) {
             // ... et si la réservation n'arrive pas à se créer ...
             if ($reservation->add()) {
-                $success = 'La réservation a été ajouté avec succès';
+                $success = 'La réservation a été ajoutée avec succès';
             } else {
                 $formErrors['general'] = 'L\'article n\'a pas pu être créé. Veuillez réessayer plus tard.';
                 // ... je supprime l'image.

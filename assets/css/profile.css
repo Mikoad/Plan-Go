@@ -1,5 +1,13 @@
 /*profile part*/
 
+.logout a {
+  text-align: end;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 5px;
+}
 .welcomeMessage {
   text-align: center;
   padding: 10px;
@@ -99,18 +107,31 @@
 
 .planning {
   padding: 20px;
-  width: 90vw;
   margin: auto;
   min-height: 50vh;
 }
 .planning h2 {
   margin: 20px;
 }
+.planning a i {
+  color: white;
+  background-color: rgb(31, 117, 183);
+  border-radius: 100px;
+  padding: 8px;
+}
+.planning a i {
+  margin-top: 20px;
+}
 .planning table {
   width: 90%;
   margin: auto;
 }
-
+.planning form button {
+  margin-right: 5px;
+}
+.actions button {
+  background-color: rgb(217, 0, 0);
+}
 table,
 tr,
 th,
@@ -119,4 +140,10 @@ td {
   border-collapse: collapse;
   text-align: center;
   padding: 5px;
+  background: rgb(116, 214, 116);
+}
+@media screen and (max-width: 450px) {
+  .planning td {
+    padding: 2px;
+  }
 }

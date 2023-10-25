@@ -7,7 +7,7 @@
         <!-- Faire en sorte que l'option Tout du select, affiche toutes les réservations des subtypes correspondant -->
         <h2>Modifier les informations</h2>
 
-        <form action="modifier-réservation-<?= $_GET['id'] ?>" method="POST" enctype="multipart/form-data">
+        <form action="modifier-réservation-<?= $_GET['id'] ?>" method="POST">
 
 
             <label for="name">Titre de la réservation</label>
@@ -47,7 +47,7 @@
             <input type="submit" value="Modifier" name="update">
         </form>
         <h2>Modifier l'image</h2>
-        <form action="modifier-réservation-<?= $_GET['id'] ?>" method="POST">
+        <form action="modifier-réservation-<?= $_GET['id'] ?>" method="POST" enctype="multipart/form-data">
             <label for="image">Choisir un fichier</label>
             <input type="file" name="image" id="image">
             <?php if (isset($formErrors['image'])) { ?>

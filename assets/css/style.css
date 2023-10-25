@@ -46,7 +46,15 @@ footer a {
   padding: 5px;
   margin-bottom: 10px;
 }
-
+.successMessage a {
+  color: rgb(8, 166, 8);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.successMessage {
+  margin-top: 20px;
+}
 /*buttons*/
 button {
   cursor: pointer;
@@ -121,10 +129,7 @@ nav {
   top: 25px;
   right: 4vw;
 } */
-#icons {
-  cursor: pointer;
-  display: none;
-}
+
 nav button i {
   color: white;
 }
@@ -372,32 +377,10 @@ footer i {
 .siteInfos h4 {
   margin-top: 10px;
 }
-/*footer social medias icons*/
-.fa {
-  padding: 20px;
-  text-align: center;
-  margin: 5px 2px;
-  font-size: 30px;
-  width: 50px;
-}
-.fa-facebook {
-  background: #3b5998;
-  color: white;
-}
-.fa-twitter {
-  background: #55acee;
-  color: white;
-}
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-.fa-instagram {
-  background: #125688;
-  color: white;
-}
-.fa:hover {
-  opacity: 0.9;
+
+/*admin reservation list style*/
+.reservationList {
+  width: 100%;
 }
 
 /* #dcc8ff violet stylé pour (petite) bannière
@@ -409,6 +392,9 @@ sable clair #fff7e1 */
 /*Responsive*/
 
 @media screen and (max-width: 755px) {
+  .imgHeader {
+    height: 70vh;
+  }
   .advantages {
     display: flex;
     flex-wrap: wrap;
@@ -416,22 +402,33 @@ sable clair #fff7e1 */
   .advantages div {
     width: calc(100% - 20px);
   }
+
   footer {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap-reverse;
   }
   @media screen and (max-width: 560px) {
-    nav ul {
+    nav span {
       display: none;
     }
-    #icons {
-      display: block;
-      padding: 10px;
+    .imgHeader {
+      height: 60vh;
     }
-    #icons:before {
+    .headerContent {
+      margin-top: 20px;
+    }
+    .headerContent p {
+      width: 100%;
+    }
+    nav ul {
+      width: 100%;
+    }
+
+    /* #icons:before {
       content: "\2630";
-    }
+    } */
+
     .bannerContent {
       width: 75vw;
     }

@@ -13,7 +13,7 @@ $getSubTypesList = $reservationsSubTypes->getListBySubType();
 
 //instanciation objet reservations
 $reservation = new reservations;
-//récupérer la liste des types
+//récupérer la liste des réservations par types
 $reservationsTypes = $reservation->getListByType();
 
 
@@ -33,16 +33,22 @@ foreach ($getSubTypesList as $stl) {
     $id = $stl->rtId;
 }
 
+//changer le nom des $reservationList car peut y avoir des conflits
 
+//si la valeur de la recherche est récupérer dans l'url
 if (!empty($_GET['search'])) {
+    //j'importe mon fichier reservationsModel
     require_once '../models/reservationsModel.php';
+    //j'appelle la méthode search de l'objet reservations avec en paramètre la valeur de la recherche récupéré avec l'url, que je stocke dans la variable reservationList
     $reservationList = $reservation->search($_GET['search']);
 } else {
+    //si la valeur de la recherche n'est pas récupérer dans l'url, j'appelle getList pour lister toutes les réservations.
     $reservationList = $reservation->getList();
 }
-//appel méthode checkIfExists
 
+//si la category est selectionnée
 if (!empty($_POST['category'])) {
+    //je stocke la valeur de category dans la propriété id_reservationsSubTypes de l'objet reservation
     $reservation->id_reservationsSubTypes = $_POST['category'];
 
     if (!empty($_POST['price']) && $_POST['price'] == 'DESC') {
@@ -51,6 +57,7 @@ if (!empty($_POST['category'])) {
         $reservationList = $reservation->getListBySubType('ASC');
     }
 }
+
 
 
 

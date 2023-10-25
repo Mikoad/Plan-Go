@@ -17,6 +17,9 @@ $regex = [
 $formErrors = [];
 $userUpdate = new users;
 
+//UPDATE PART
+
+
 //update user infos form
 if (isset($_POST['updateInfos'])) {
 
@@ -47,12 +50,16 @@ if (isset($_POST['updateInfos'])) {
     } else {
         $formErrors['email'] = 'Veuillez renseigner votre adresse e-mail.';
     }
-
+    //si aucune erreur
     if (count($formErrors) == 0) {
+        //stockage de l'id de l'utilisateur de la session dans la propriété id de l'objet userUpdate
         $userUpdate->id = $_SESSION['user']['id'];
         try {
+            //si la méthode de modification des infos de l'user marche
             if ($userUpdate->updateInfos()) {
+                //je stocke l'username de l'user dans la session
                 $_SESSION['user']['username'] = $_POST['username'];
+                //et j'affiche un message de succès
                 $success['updateInfos'] = 'Vos informations ont bien été modifié.';
             }
         } catch (PDOException $e) {
@@ -107,16 +114,43 @@ if (isset($_POST['updatePassword'])) {
     }
 }
 
+//si la donnée delete existe => si l'utilisateur clique sur l'input submit 
 if (isset($_POST['delete'])) {
+    //si la méthode de suppression de compte est lancée
     if ($user->deleteAccount()) {
+        //je détruit les variables de session du user
         unset($_SESSION['user']);
+        //je détruis la session
         session_destroy();
+        //et je le redirige vers l'accueil
         header('Location: /accueil');
         exit;
     }
 }
-
+//appel de la méthode getOneById de mon usersModel pour récupérer des informations de l'utilisateur
 $userDetails = $user->getOneById();
+
+
+//PLANNING PART 
+
+
+require_once '../models/usersReservationsModel.php';
+$usersReservations = new usersReservations;
+//sotcké l'id de l'utilisateur récupérer avec l'URL dans la propriété id_users de l'objet usersReservations
+$usersReservations->id_users = $_SESSION['user']['id'];
+
+//appeler getList() pour lister les réservations de l'utilisateur
+$urList = $usersReservations->getList();
+
+//si le formulaire est soumis, lancer la méthode de suppression
+if (isset($_POST['deleteReservation'])) {
+    $usersReservations->deleteReservation();
+}
+// if (isset($_POST['deleteOneById'])) {
+//     $usersReservations->deleteOneById();
+// }
+
+
 //voir la view reservation quand je clique sur l'oeil
 //supprimer la reservation du planning au clic sur trash
 

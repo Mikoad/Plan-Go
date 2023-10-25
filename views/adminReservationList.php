@@ -1,5 +1,6 @@
 <main>
-    <table>
+    <h1>Liste des réservations</h1>
+    <table class="reservationList">
         <thead>
             <tr>
                 <th>Nom</th>
